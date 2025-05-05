@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BACKEND.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BACKEND.Controllers
 {
@@ -6,10 +7,16 @@ namespace BACKEND.Controllers
     [Route("[controller]")]
     public class FibonacciController : ControllerBase
     {
-        [HttpPost]
-        public List<int> FibonacciNumbers()
+        FibonacciRepository repo;
+        public FibonacciController()
         {
-            return new List<int>() { 1, 2, 3, 4, 5};
+            repo = new FibonacciRepository();
+        }
+
+        [HttpPost]
+        public List<int> FibonacciNumbers([FromBody] int iteration)
+        {
+            return repo.Calculate(iteration);
         }
     }
 }
