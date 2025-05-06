@@ -1,16 +1,17 @@
-const input = document.getElementById("iteration").value;
+function sendReq() {
+    var input = document.getElementById("iteration").value;
 
-function sendRequest() {
-    fetch('https://localhost:7241/', {
+    fetch('https://localhost:7118/Fibonacci', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control': 'Allow-Origin'
         },
         body: JSON.stringify(input)
     })
     .then(response => response.json())
     .then(data => {
-        
+        console.log(data)
     })
     .catch(error => {
         console.error('Hiba történt a kérés során:', error);

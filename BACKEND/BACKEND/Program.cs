@@ -30,7 +30,7 @@ namespace BACKEND
             .AllowCredentials()
             .AllowAnyMethod()
             .AllowAnyHeader()
-            .WithOrigins("localhost:5500"));
+            .WithOrigins("http://192.168.8.162:5500"));
 
 
             app.Run();
