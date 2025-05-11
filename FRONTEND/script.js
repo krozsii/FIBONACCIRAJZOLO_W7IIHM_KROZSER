@@ -29,6 +29,9 @@ function drawFibonacci(numbers){
     container.innerHTML = "";
     const centerX = (container.offsetWidth / 2); //Konténer vízszintes közepe
     const centerY = (container.offsetHeight / 2); //Konténer függőleges közepe
+
+    const values = document.getElementById("spiral_values");
+    values.innerHTML = "";
     
     const scale = 20; //Négyzetek nagyításának mértéke
     const directions = [
@@ -41,7 +44,8 @@ function drawFibonacci(numbers){
 
 
     //A nullát nem tudjuk megjeleníteni
-    if(numbers.length > 1 && numbers[0] === 0){
+    if(numbers.length > 0 && numbers[0] === 0){
+        values.innerText = "0, ";
         numbers.shift();
     }
 
@@ -87,4 +91,6 @@ function drawFibonacci(numbers){
         container.appendChild(box);
         prev = {x, y, size};
     }
+
+    values.innerText += numbers;
 }
