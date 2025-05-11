@@ -30,7 +30,7 @@ function drawFibonacci(numbers){
     const centerY = (container.offsetHeight / 2); //Konténer függőleges közepe
     
     const scale = 20; //Négyzetek nagyításának mértéke
-    const dir = [
+    const directions = [
         { dx: 1, dy: 0 },   // jobbra
         { dx: 0, dy: -1 },  // fel
         { dx: -1, dy: 0 },  // balra
@@ -44,5 +44,19 @@ function drawFibonacci(numbers){
         numbers.shift();
     }
 
+    for(let i = 0; i < numbers.length; i++){
+        const size = numbers[i] * scale;
+        let x, y;
 
+        if(i === 0){
+            x = centerX - size / 2;
+            y = centerY - size / 2;
+        }
+
+        else{
+            const dir = directions[(i - 1) % 4];
+            const prevDir = directions[(i - 1) % 4];
+            const prevSize = numbers[i - 1] * scale;
+        }
+    }
 }
