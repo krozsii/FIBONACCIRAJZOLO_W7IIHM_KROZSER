@@ -7,17 +7,58 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
     <style>
+        body{
+            background-color: #343a40;
+            color: #31bacf;
+            text-align: center;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            letter-spacing: 1px;
+        }
+
+        input{
+            border: 0;
+            padding: 10px;
+            width: 300px;
+            border-bottom: 5px solid #31bacf;
+            outline: none;
+        }
+
+        input::placeholder{
+            font-size: medium;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        button{
+            background-color: #83909b;
+            font-size: medium;
+            border: 2px solid #31bacf;
+            width: 100px;
+            border-radius: 2px;
+            display: block;
+            padding: 5px;
+            margin: auto;
+            margin-top: 10px;
+            transition: 0.3s ease-in-out;
+        }
+
+        button:hover{
+            background-color: #343a40;
+            color: #31bacf;
+        }
+
         #spiral {
             position: relative;
             width: 1000px;
-            height: 800px;
+            height: 700px;
             margin: 0 auto;
         }
 
         .box {
             position: absolute;
             border: 2px solid black;
-            background: rgba(255, 221, 85, 0.6);
+            background: rgba(49, 186, 207, 0.6);
+            color: black;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,8 +67,7 @@
     </style>
 </head>
 <body>
-    <h2>Fibonacci rajzoló</h2>
-    <br>
+    <h1>Fibonacci rajzoló</h1>
     <input type="number" name="iteration" id="iteration" min="1" max="11" step="1" placeholder="Iterációk száma">
     <button type="button" onclick="sendReq()">Rajzol!</button>
 

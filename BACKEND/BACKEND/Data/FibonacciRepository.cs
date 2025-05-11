@@ -6,7 +6,7 @@
         {
             List<int> fib = new List<int>();
 
-            if(iteration >= 1 || iteration <= 11)
+            if(iteration >= 1 && iteration <= 11)
             {
                 for (int i = 0; i < iteration; i++)
                 {
