@@ -9,11 +9,21 @@ function sendReq() {
         },
         body: JSON.stringify(input)
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("A válasz nem volt sikeres: " + response.status);
+        }
+        return response.json();
+    })
+    .then(numbers => {
+        drawFibonacci(numbers)
     })
     .catch(error => {
         console.error('Hiba történt a kérés során:', error);
     });
-  }
+}
+
+
+function drawFibonacci(numbers){
+    
+}
