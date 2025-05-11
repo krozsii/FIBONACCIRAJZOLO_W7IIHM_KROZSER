@@ -26,6 +26,7 @@ function sendReq() {
 
 function drawFibonacci(numbers){
     const container = document.getElementById("spiral"); //HTML konténer, amelyben meg akarunk jeleníteni
+    container.innerHTML = "";
     const centerX = (container.offsetWidth / 2); //Konténer vízszintes közepe
     const centerY = (container.offsetHeight / 2); //Konténer függőleges közepe
     
