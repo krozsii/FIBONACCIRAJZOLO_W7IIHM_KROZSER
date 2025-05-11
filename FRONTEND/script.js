@@ -52,11 +52,27 @@ function drawFibonacci(numbers){
             x = centerX - size / 2;
             y = centerY - size / 2;
         }
-
         else{
             const dir = directions[(i - 1) % 4];
             const prevDir = directions[(i - 1) % 4];
             const prevSize = numbers[i - 1] * scale;
+
+            if(dir.dx === 1){
+                x = prev.x + prevSize;
+                y = prev.y + prevSize - size;
+            }
+            else if(dir.dy === -1){
+                x = prev.x + prevSize - size;
+                y = prev.y - size;
+            }
+            else if(dir.dx === -1){
+                x = prev.x - size;
+                y = prev.y;
+            }
+            else{
+                x = prev.x;
+                y = prev.y + prevSize;
+            }
         }
     }
 }
