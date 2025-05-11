@@ -74,5 +74,16 @@ function drawFibonacci(numbers){
                 y = prev.y + prevSize;
             }
         }
+
+        const box = document.createElement("div");
+        box.setAttribute("class", "box");
+        box.style.width = `${size}px`;
+        box.style.height = `${size}px`;
+        box.style.left = `${x}px`;
+        box.style.top = `${y}px`;
+        box.innerText = numbers[i];
+
+        container.appendChild(box);
+        prev = {x, y, size};
     }
 }
