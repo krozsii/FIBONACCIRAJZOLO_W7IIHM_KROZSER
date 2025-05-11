@@ -25,5 +25,17 @@ function sendReq() {
 
 
 function drawFibonacci(numbers){
+    const container = document.getElementById("spiral");
+    const centerX = (container.offsetWidth / 2);
+    const centerY = (container.offsetHeight / 2);
     
+    const scale = 20;
+    const dir = [
+        { dx: 1, dy: 0 },   // jobbra
+        { dx: 0, dy: -1 },  // fel
+        { dx: -1, dy: 0 },  // balra
+        { dx: 0, dy: 1 },   // le
+    ];
+    let prev;
+
 }
